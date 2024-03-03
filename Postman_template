@@ -1,0 +1,45 @@
+
+POST OPERATIONS
+
+'''Album - POST(http://localhost:8080/api/albums)'''
+{
+    "al_id": "2",
+    "artist" : "Ariijt Singh",
+    "title" : "Moh Moh k dhaage"
+}
+
+'''Playlist - POST(http://localhost:8080/api/playlists)'''
+{
+    "id": "2",
+    "artist" : "Ariijt Singh",
+    "num_songs" : "1"
+}
+
+'''Song - POST(http://localhost:8080/api/songs)'''
+{
+    "id": "2",
+    "artist" : "Ariijt Singh",
+    "title" : "Moh Moh k dhaage",
+    "playlist": {"id": "1"},
+    "album": {"al_id": "2"}
+}
+
+PUT OPERATIONS
+
+'''Album - PUT(http://localhost:8080/api/albums/4)'''
+{
+    "artist" : "Ariijt Singh",
+    "title" : "Moh Moh k dhaage"
+}
+
+'''Playlist - PUT(http://localhost:8080/api/playlists/2)'''
+{
+    "artist" : "Ariijt Singh",
+    "num_songs" : "1"
+}
+
+'''Song - PUT(http://localhost:8080/api/songs/1)'''
+{
+    "artist" : "Ariijt Singh",
+    "title" : "Moh Moh k dhaage",
+}
