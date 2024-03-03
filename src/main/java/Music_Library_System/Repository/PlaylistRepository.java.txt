@@ -1,0 +1,11 @@
+package Music_Library_System.Repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import Music_Library_System.Entity.Playlist;
+
+public interface PlaylistRepository extends JpaRepository<Playlist, Integer>{
+
+	Playlist findById(int id);
+
+}

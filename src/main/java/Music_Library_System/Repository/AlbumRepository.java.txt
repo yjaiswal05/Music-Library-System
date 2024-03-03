@@ -1,0 +1,12 @@
+package Music_Library_System.Repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import Music_Library_System.Entity.Album;
+
+public interface AlbumRepository extends JpaRepository<Album, Integer>{
+
+	Album findById(int id);
+
+
+}

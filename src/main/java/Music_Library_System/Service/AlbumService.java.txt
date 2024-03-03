@@ -1,0 +1,43 @@
+package Music_Library_System.Service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import Music_Library_System.Entity.Album;
+import Music_Library_System.Entity.Song;
+import Music_Library_System.Repository.AlbumRepository;
+
+@Service
+public class AlbumService {
+	@Autowired
+	private AlbumRepository albumRepository;
+
+	public Album createAlbum(Album album) {
+		return albumRepository.save(album);
+	}
+
+	public List<Album> getAllAlbums() {
+		return albumRepository.findAll();
+	}
+
+	public Album getAlbumById(int id) {
+		return albumRepository.findById(id);
+	}
+
+	public Album updateAlbum(int id, Album updatedAlbum) {
+		Album existingAlbum = albumRepository.findById(id);
+		if (updatedAlbum.getTitle() != null) {
+			existingAlbum.setTitle(updatedAlbum.getTitle());
+		}
+		if (updatedAlbum.getArtist() != null) {
+			existingAlbum.setArtist(updatedAlbum.getArtist());
+		}
+		return albumRepository.save(existingAlbum);
+	}
+
+	public void deleteAlbum(int id) {
+		albumRepository.deleteById(id);
+	}
+}

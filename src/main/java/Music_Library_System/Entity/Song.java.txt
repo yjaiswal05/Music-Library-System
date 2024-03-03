@@ -1,0 +1,25 @@
+package Music_Library_System.Entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import lombok.Data;
+
+@Entity
+@Data
+public class Song {
+	@Id
+	private int id;
+	private String artist;
+	private String title;
+
+	
+	@ManyToOne
+	private Playlist playlist;
+
+	@ManyToOne
+	@JoinColumn(name = "al_id")
+	private Album album;
+}
